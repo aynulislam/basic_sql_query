@@ -1,0 +1,97 @@
+#Regular exp in database 
+
+select *
+from sales
+where monthly_credit regexp "3107";
+
+
+#Regular exp with or
+
+select *
+from sales
+where monthly_credit regexp 3107|3100;
+
+select *
+from sales
+where monthly_credit regexp "^2000"|"3000"|"4000";
+
+
+#before za standing a in emp_name
+select *
+from users
+where emp_name regexp "[za] a";
+
+#after za standing a in emp_name
+select *
+from users
+where emp_name regexp "a [za] ";
+
+select *
+from users
+where emp_name regexp "a [z]";
+
+select *
+from users
+where emp_name regexp "a [a-h]";
+
+select *
+from users
+where emp_name regexp "[a-h] a ";
+
+
+#emp_name s last ey or by
+select *
+from users
+where emp_name regexp "ey$|by$";
+
+
+#emp_name s first en or an
+select *
+from users
+where emp_name regexp "^ey|^by";
+
+#emp_name s en first or an last
+select *
+from users
+where emp_name regexp "^en|an$";
+
+
+#some regexp simbol
+
+^ use for beginning
+$ use for end
+| logical or
+[abcd] 
+[a-f] range use  
+
+#null and not null
+
+select * 
+from items
+where modified_by is null;
+
+select * 
+from items
+where modified_by is not null;
+
+#use order by
+
+select * 
+from items
+where modified_by is not null
+order by uom_id;
+
+#asc and dsc
+
+select * 
+from items
+order by item_name desc, id asc;
+
+select * 
+from sales
+order by invoice_no asc, credit_remain desc; 
+
+select *
+from sales_details
+order by qty desc, sale_id asc, qty*rate < total_price;
+

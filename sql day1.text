@@ -1,0 +1,115 @@
+1#all object from sales table
+
+select * from sales
+
+
+
+2#multiple key from single table
+
+select monthly_credit,credit_remain
+from sales
+
+
+
+3#single ids all value
+
+select *
+from sales
+where shop_id=1;
+
+
+
+4# single ids multiple value return 
+
+select invoice_no,monthly_credit,credit_remain 
+from sales
+where shop_id=1;
+
+
+
+5#order by use to return all objects value
+
+select * 
+from sales 
+order by id;
+
+
+
+6#order by use to return specific objects value
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit
+from sales
+order by id;
+
+
+
+7#specific id s specific objects value
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit
+from sales
+where id =1
+order by id;
+
+
+
+8#calculation add,sub,mul,div, as means new table
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit * 10
+from sales
+where id =1
+
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - 100
+from sales
+where id =1
+
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit / 10
+from sales
+where id =1
+
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit % 10
+from sales
+where id =1
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used
+from sales
+where id =1
+
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used as difference 
+from sales
+where id =1
+
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used as difference 
+from sales
+where id =10
+order by id;
+
+
+#distinct with calculation distinct means duplicate value not return
+
+select distinct monthly_credit,credit_used, -credit_used + monthly_credit as difference 
+from sales
+where monthly_credit>3000;
+
+
+select distinct monthly_credit,credit_used, -credit_used + monthly_credit as difference 
+from sales
+where monthly_credit<2000; 
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used as difference 
+from sales
+where monthly_credit<=2000; 
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used as difference 
+from sales
+where monthly_credit>=2000; 
+
+SELECT invoice_no,emp_code,emp_name,monthly_credit,credit_used, monthly_credit - credit_used as difference 
+from sales
+where monthly_credit=2000; 
+
+

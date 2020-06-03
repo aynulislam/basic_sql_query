@@ -1,0 +1,77 @@
+#date wise data filter
+
+select * 
+from sales
+where invoice_date !="2018-10-21";
+
+#full year data filter
+
+select * 
+from sales
+where invoice_date >="2018-01-01";
+
+
+#and,or,not,in, between  filtering data
+
+select * 
+from sales
+where invoice_date >="2018-01-01" and employee_code = "55895";
+
+
+select *  
+from sales
+where invoice_no = "0000010117" and emp_code = "55895";
+
+select *  
+from sales
+where user_id = "349" or emp_code = "52113";
+
+select *  
+from sales
+where invoice_no = "0000000101" or 
+(user_id = "1167" and monthly_credit <3000);
+
+select *  
+from sales
+where not invoice_date > "2018-01-01" and "0000000101" or user_id = 1 ;
+ 
+
+select * 
+from sales
+where invoice_no = "0000000005" or monthly_credit = "3311.610000" or credit_remain = "1137.000000";
+
+
+select * 
+from sales
+where invoice_no in ( 0000000003, 0000009770);
+
+select * 
+from sales
+where invoice_no not in ( 0000000003, 0000009770);
+
+select * 
+from sales
+where invoice_no not in ( 0000000003, 0000001);
+
+
+select * 
+from sales
+where invoice_no between 0000000002 and 0000000010;
+
+
+
+#like is use for start with
+select *
+from sales
+where user_id like '54%';
+
+select *
+from sales
+where user_id like '54%';
+
+SELECT * FROM users
+where emp_name like '%abdull%';
+
+SELECT * FROM users   (a start with ____ blank and l finish)
+where emp_name like 'a___l';
+

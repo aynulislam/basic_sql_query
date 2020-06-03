@@ -1,0 +1,49 @@
+#limit in SQL, retrieve first 10 data 
+
+Select *
+from sales
+limit 10;
+
+
+#retrieve in next 20 data ignore first 10 data
+select *
+from sales
+limit 10,20;
+
+#retrive first 10 maximum credit_remain
+select *
+from sales
+order by credit_remain desc
+limit 10;
+
+#retrive first 11-30 maximum credit_remain
+select *
+from sales
+order by credit_remain desc
+
+#join in sql(sales_detail and uom table)
+select *
+from sales_details
+join uom
+on sales_details.uom_id = uom.id;
+
+#join in sql (sales_detail and uom table) multiple value with order by
+select *
+from sales_details
+join uom
+on sales_details.uom_id = uom.id
+order by uom_id;
+
+#join in sql (sales_detail and uom table) multiple value
+select total_price,barcode_no
+from sales_details
+join uom
+on sales_details.uom_id = uom.id;
+
+#join in sql (sales_detail and uom table) multiple value with order by
+select total_price,barcode_no
+from sales_details
+join uom
+on sales_details.uom_id = uom.id
+order by total_price;
+
